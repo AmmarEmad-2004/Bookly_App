@@ -1,13 +1,13 @@
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 
-class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
+class CustomBookItem extends StatelessWidget {
+  const CustomBookItem({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.25,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 6),
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: Container(
