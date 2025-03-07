@@ -1,8 +1,5 @@
-import 'package:bookly_app/core/utils/styles_app.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_details_item.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/books_action.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_view_app_bar.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_details_section.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -12,45 +9,28 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          children: [
-            CustomBookDetailsViewAppBar(),
-            BookDetailsItem(),
-            SizedBox(
-              height: 43,
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: SafeArea(
+            child: Column(
+              children: [
+                BookDetailsSection(),
+                Expanded(
+                  child: SizedBox(
+                    height: 50,
+                  ),
+                ),
+                SimilarBooksSection(),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
             ),
-            Text(
-              'The Jungle Book',
-              style: Styles.textStyle30,
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Text(
-              'Rudyard Kipling',
-              style: Styles.textStyle18.copyWith(
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            SizedBox(
-              height: 18,
-            ),
-            BookRating(
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-            SizedBox(
-              height: 18,
-            ),
-            BooksAction(),
-          ],
-        ),
-      ),
+          ),
+        )
+      ],
     );
   }
 }
-
-
