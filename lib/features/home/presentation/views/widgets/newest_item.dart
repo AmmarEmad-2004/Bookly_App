@@ -1,12 +1,12 @@
 import 'package:bookly_app/core/utils/app_routers.dart';
 import 'package:bookly_app/core/utils/styles_app.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/best_sellers_book.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/newest_book.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellersItem extends StatelessWidget {
-  const BestSellersItem({super.key});
+class NewestItem extends StatelessWidget {
+  const NewestItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class BestSellersItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            BestSellersBook(),
+            NewestBook(),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
