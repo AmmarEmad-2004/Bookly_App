@@ -20,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomAppBar(),
-                BookListItem(),
+                BookListItems(),
                 const SizedBox(height: 50),
                 Text(
                   'Best Sellers',

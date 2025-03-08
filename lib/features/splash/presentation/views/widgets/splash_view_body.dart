@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/core/utils/app_routers.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
 
@@ -26,8 +25,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
     navigationToHomeView();
   }
 
-  
-
   @override
   void dispose() {
     super.dispose();
@@ -48,7 +45,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigationToHomeView() {
-     Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 3), () {
       // ignore: use_build_context_synchronously
       GoRouter.of(context).push(AppRouters.homeView);
     });
