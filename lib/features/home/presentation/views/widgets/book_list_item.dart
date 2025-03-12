@@ -16,9 +16,12 @@ class BookListItems extends StatelessWidget {
         return SizedBox(
           height: MediaQuery.of(context).size.height * 0.25,
           child: ListView.builder(
+            physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            itemCount: 10,
-            itemBuilder: (context, index) => CustomBookItem(),
+            itemCount: state.books.length,
+            itemBuilder: (context, index) => CustomBookItem(
+              imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+            ),
           ),
         );
       } else if (state is FetchBooksFailuer) {
