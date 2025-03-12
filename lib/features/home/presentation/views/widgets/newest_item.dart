@@ -1,13 +1,14 @@
 import 'package:bookly_app/core/utils/app_routers.dart';
 import 'package:bookly_app/core/utils/styles_app.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/newest_book.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class NewestItem extends StatelessWidget {
-  const NewestItem({super.key});
-
+  const NewestItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +20,9 @@ class NewestItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            NewestBook(),
+            NewestBook(
+              imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+            ),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -28,7 +31,7 @@ class NewestItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      'Harry Potter\nand the Goblin of Fire',
+                      bookModel.volumeInfo.title!,
                       style: Styles.textStyle20,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -37,7 +40,12 @@ class NewestItem extends StatelessWidget {
                   SizedBox(
                     height: 3,
                   ),
-                  Text('J.K. Rowling', style: Styles.textStyle14),
+                  Text(
+                    bookModel.volumeInfo.authors![0],
+                    style: Styles.textStyle14,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   SizedBox(
                     height: 3,
                   ),
@@ -48,7 +56,7 @@ class NewestItem extends StatelessWidget {
                         r'19.99 $',
                         style: Styles.textStyle18,
                       ),
-                      BookRating()
+                      BookRating(),
                     ],
                   )
                 ],

@@ -14,6 +14,7 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: Column(
@@ -23,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
                 BookListItems(),
                 const SizedBox(height: 50),
                 Text(
-                  'Best Sellers',
+                  'Newest Books',
                   style: Styles.textStyle18,
                 ),
                 const SizedBox(height: 20),

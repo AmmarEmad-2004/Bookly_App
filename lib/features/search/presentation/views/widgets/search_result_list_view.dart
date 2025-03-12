@@ -10,7 +10,8 @@ class SearchResultListView extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return NewestItem();
+          return Text('asjkabsj');
+          //  NewestItem();
         });
   }
 }
