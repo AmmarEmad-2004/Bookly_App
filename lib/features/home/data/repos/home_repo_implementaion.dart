@@ -30,6 +30,7 @@ class HomeRepoImplementaion implements HomeRepo {
     }
   }
 
+
   @override
   Future<Either<Failures, List<BookModel>>> fetchNewestBooks() async {
     try {
