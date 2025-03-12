@@ -5,10 +5,10 @@ import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class HomeRepoImplementaion implements HomeRepo {
+class HomeRepoImple implements HomeRepo {
   final ApiService apiService;
 
-  HomeRepoImplementaion({required this.apiService});
+  HomeRepoImple({required this.apiService});
   @override
   Future<Either<Failures, List<BookModel>>> fetchBookListItems() async {
     try {
@@ -29,7 +29,6 @@ class HomeRepoImplementaion implements HomeRepo {
       return left(ServerFailure(message: e.toString()));
     }
   }
-
 
   @override
   Future<Either<Failures, List<BookModel>>> fetchNewestBooks() async {
