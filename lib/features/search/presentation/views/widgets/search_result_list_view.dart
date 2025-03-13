@@ -1,4 +1,3 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/newest_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultListView extends StatelessWidget {
